@@ -124,16 +124,25 @@ Try(int i)
 //
 
 int Queen[100],  cot[100], d1[100], d2[100], n , cnt;
-int a[100][100];
+char a[100][100];
 
 void inKQ_NQueen() {
-    memset(a, 0, sizeof(a));
+    memset(a, ' ', sizeof(a));
     for (int i = 1; i <= n; i++) {
-        a[i][Queen[i]] = 1;
+        a[i][Queen[i]] = 'x';
     }
+    for (int k = 1; k <= 2 * n + 1; k++) {
+        cout << "-";
+    }
+    cout << endl;
     for (int i = 1; i <= n; i++) {
+        cout << "|";
         for (int j = 1; j <= n; j++) {
-            cout << a[i][j];
+            cout << a[i][j] << "|";
+        }
+        cout << endl;
+        for (int k = 1; k <= 2*n+1; k++) {
+            cout << "-";
         }
         cout << endl;
     }
@@ -141,9 +150,9 @@ void inKQ_NQueen() {
 }
 void Try(int i) {
     for (int j = 1; j <= n; j++) {
-        if (cot[j] == 1 && d1[i - j + n] == 1 && d2[i + j - 1] == 1) {
+        if (cot[j] == 0 && d1[i - j + n] == 0 && d2[i + j - 1] == 0) {
             Queen[i] = j;
-            cot[j] = d1[i - j + n] = d2[i + j - 1] = 0;
+            cot[j] = d1[i - j + n] = d2[i + j - 1] = 1;
             if (i == n) {
                 inKQ_NQueen();
                 cnt++;
@@ -151,7 +160,7 @@ void Try(int i) {
             else {
                 Try(i+1);
             }
-            cot[j] = d1[i - j + n] = d2[i + j - 1] = 1;
+            cot[j] = d1[i - j + n] = d2[i + j - 1] = 0;
         }
     }
 }
@@ -160,7 +169,7 @@ int main()
 {   
     cin >> n;
     for (int i = 1; i <= 99; i++) {
-        cot[i] = d1[i] = d2[i] = 1;
+        cot[i] = d1[i] = d2[i] = 0;
     }
     Try(1);
     cout << cnt;
