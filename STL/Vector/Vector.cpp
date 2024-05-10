@@ -1,5 +1,5 @@
 ﻿#include <iostream>
-
+using namespace std;
 #include <vector>
 
 //khong giong nhu array, chi mot so gia tri nhat dinh co the duoc luu tru duoi ten mot bien duy nhat
@@ -37,8 +37,21 @@ erase(ibegin, iend
 
 ham dao nguoc vector
 reverse(v.begin(), v.end())
+
+max min trong vector
+cout << "max: " << *max_element(v.begin(), v.end()) << endl;
+cout << "min: " << *min_element(v.begin(), v.end()) << endl;
+
+set giá trị cho tất cả các phần tử 
+vector <int> v(n,0)
+memset(n,0,sizeof(v))
 */ 
 int main()
 {
-    std::cout << "Hello World!\n";
+    int n; cin >> n;
+    vector <int> v(n);
+    for (int i = 0; i < n; i++) {
+        cin >> v[i];
+    }
+
 }
