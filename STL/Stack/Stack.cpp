@@ -26,8 +26,5 @@ int main()
 	st.push(4);
 	st.push(5);
 	st.pop();
-	while (st.empty() == 0) {
-		cout << st
-	}
 	cout << st.top();
 }
