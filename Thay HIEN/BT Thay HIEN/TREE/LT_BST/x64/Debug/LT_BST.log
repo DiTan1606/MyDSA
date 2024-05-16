@@ -1,0 +1,3 @@
+﻿  LT_BST.cpp
+E:\MyDSA\Thay HIEN\BT Thay HIEN\TREE\LT_BST\LT_BST.cpp(145): warning C4715: 'searchTNode2': not all control paths return a value
+  LT_BST.vcxproj -> E:\MyDSA\Thay HIEN\BT Thay HIEN\TREE\x64\Debug\LT_BST.exe
