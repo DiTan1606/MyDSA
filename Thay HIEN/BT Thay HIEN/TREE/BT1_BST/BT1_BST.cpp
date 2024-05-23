@@ -116,11 +116,9 @@ int CountLeavesTNode(Tree t) {
     else if (t->left == NULL && t->right == NULL) {
         return 1;
     }
-    else {
-        int a = CountLeavesTNode(t->left);
-        int b = CountLeavesTNode(t->right);
-        return a + b;
-    }
+    int a = CountLeavesTNode(t->left);
+    int b = CountLeavesTNode(t->right);
+    return a + b;
 }
 int CountHaveOnlyOneChildTNode(Tree t) {
     if (t == NULL) {
@@ -299,7 +297,7 @@ int main()
     Tree t = NULL;
     Tree t1 = NULL;
 
-    int a[] = { 3,5,20,11,31,9,18,4,35,2,1 };
+    int a[] = { 3,4,8,6,11,5,30,20,18,7 };
 
     for (int x : a) {
         insertTNode(t, x);
